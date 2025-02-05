@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
+        <link rel="stylesheet" hreefe="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <h1> {{ title }}</h1>
+        <h2> {{ tagline }}</h2>
+        <p><strong>Genre:</strong> {{ genre }}</p>
+        <img src="{{ poster_url }}" alt="Movie Poster">
+        <p><a href="{{ wiki_url }}" target="_blank">Find the Wikipedia Page here</a></p>
+    </body>
+    </html>
