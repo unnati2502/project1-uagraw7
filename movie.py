@@ -13,7 +13,8 @@ WIKI_API_URL = "https://en.wikipedia.org/w/api.php"
 #https://api.themoviedb.org/3/movie/550?api_key=
 #function to load data from tmdb
 def tmdb_data(movie_id):
-    response = requests.get(Base_url, params={"q": movie_id, "api-key": Tmdb_key})
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={Tmdb_key}&language=en-US"
+    response = requests.get(url)
     if response.status_code==200:
         return response.json()
     return None
