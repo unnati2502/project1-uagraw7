@@ -1,7 +1,6 @@
 import flask
 from flask import render_template
 import random
-import os
 from movie import tmdb_data, wiki_data, Movie_id_list
 
 app = flask.Flask(__name__)
@@ -30,5 +29,5 @@ def main():
 
 # Running Flask app
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port= os.environ.get("PORT", "8080"))
+    app.run(host="0.0.0.0", port= os.getenviron("PORT", "8080"))
 
