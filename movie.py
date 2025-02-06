@@ -4,7 +4,7 @@ from dotenv import find_dotenv, load_dotenv
 
 
 load_dotenv(find_dotenv())
-Tmdb_key = os.getenv("TMDB-API")
+API_KEY = os.getenv("API_KEY")
 Movie_id_list = [
     1241982,762509,402431,1011985,748783,519182,1022789,808,109445,62177
     ]
@@ -14,7 +14,7 @@ WIKI_API_URL = "https://en.wikipedia.org/w/api.php"
 
 #function to load data from tmdb
 def tmdb_data(movie_id):
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={Tmdb_key}&language=en-US"
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
     response = requests.get(url)
     if response.status_code==200:
         return response.json()
@@ -38,6 +38,7 @@ def wiki_data(movie_title):
         return "https://en.wikipedia.org/wiki/Main_Page"
 
     data = response.json()
+    
     pages = data.get("query", {}).get("pages", [])
 
     if pages and "fullurl" in pages[0]:  # Extract Wikipedia URL
