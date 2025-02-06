@@ -2,11 +2,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-        <title>{{ title }}</title>
+        <title> Movie Explorer </title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
 
     <body>
+        <header>
+            The Movie Explorer
+        </header>
         <div class="movie-container">
             <h1> {{ title }}</h1>
             <h2> {{ tagline }}</h2>

@@ -6,7 +6,7 @@ from dotenv import find_dotenv, load_dotenv
 load_dotenv(find_dotenv())
 Tmdb_key = os.getenv("TMDB-API")
 Movie_id_list = [
-    1241982,762509,402431,1011985,639720,748783,519182,1022789,808,109445,62177
+    1241982,762509,402431,1011985,748783,519182,1022789,808,109445,62177
     ]
 
 Base_url="https://api.themoviedb.org/3/movie"
@@ -45,7 +45,6 @@ def wiki_data(movie_title):
 
     return "https://en.wikipedia.org/wiki/Main_Page"
 
-    #return "<br>".join([f'<a href="{link}" target="_blank">{link}</a>' for link in links])
         
 
 
